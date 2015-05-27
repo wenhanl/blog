@@ -1,0 +1,40 @@
+
+<% if params.has_key?(:id) %>
+  <% action = "update" %>
+  <% method = "patch" %>
+<% else %>
+  <% action = "create" %>
+  <% method = "post" %>
+<% end %>
+
+<%= form_tag({controller: "articles", action: action}, method: method) do %>
+  <% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= label_tag(:title, "Title") %><br>
+    <%= text_field_tag(:title, @article.title) %>
+  </p>
+ 
+  <p>
+    <%= label_tag(:text, "Text") %><br>
+    <%= text_area_tag(:text, @article.text) %>
+  </p>
+
+  <p>
+    <%= label_tag(:tag, "Tag") %><br>
+    <%= text_field_tag(:tag, @article.tag.map {|c| c.name}.join(',')) %>
+  </p>
+ 
+  <p>
+    <%= submit_tag("Submit") %>
+  </p>
+<% end %>
