@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+
+// Header
+.header {
+	.nav-bar {
+		float: right;
+	}
+
+	ul {
+		list-style: none;
+		display: block;
+	}
+	li {
+		display: inline-block;
+		animation: bounce .3s ease-in-out 1s infinite;
+	}
+}
+
+.list-item {
+	width: 600px;
+	.tags {
+		color: #f00;
+	}
+
+
+	img {
+		float: right;
+		width: 200px;
+		min-height: 60px;
+		max-height: 100px;
+		margin: 0 0 0 1em;
+	}
+}

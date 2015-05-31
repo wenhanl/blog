@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 		  Article.transaction do
 			  tag_arr.each do |name|
 					tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
-					@article.tag << tag
+					@article.tag.push(tag)
 			  end
 			 end
 		  redirect_to @article
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
       Article.transaction do
         tag_arr.each do |name|
           tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
-          @article.tag << tag
+          @article.tag.push(tag)
         end
       end
 	    redirect_to @article
