@@ -21,5 +21,6 @@ module Blog
     # config.i18n.default_locale = :de
     config.generators.stylesheets = false
     config.generators.javascripts = false
+    #config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
   end
 end

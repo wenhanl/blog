@@ -10,13 +10,35 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
+@import 'base';
+
+
+
+@font-face {
+  font-family: 'raleway';
+  src:   font-url('Raleway-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
 // Header
 .header {
+	border-bottom: 2px solid #aaa;
+	width: 100%;
+	margin: 8px 0;
+	padding-bottom: 12px;
+	z-index: 999;
+
 	.nav-bar {
 		float: right;
 	}
@@ -24,11 +46,35 @@
 	ul {
 		list-style: none;
 		display: block;
+		margin: 8px;
 	}
 	li {
 		display: inline-block;
-		animation: bounce .3s ease-in-out 1s infinite;
+		padding: 2px 4px;
+		margin-right: 18px;
+		font-size: 16px;
+		font-family: 'raleway', arial;
+		font-weight: 700;
 	}
+
+	a {
+		padding: 3px 2px;
+		text-decoration: none;
+		color: #444;
+	}
+
+	a:hover {
+		border-bottom: 2px solid #D19E29;
+	}
+
+	.selected {
+		border-bottom: 2px solid #D19E29;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 70%;
 }
 
 .list-item {
