@@ -2,4 +2,65 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	background-color: #eee;
+	font-family: "open sans";
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main {
+	margin-top: 0;
+}
+
+
+/* Fonts*/
+@font-face {
+  font-family: 'raleway';
+  src:   font-url('Raleway-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'bold raleway';
+	src: font-url('Raleway-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'open sans';
+	src: font-url('OpenSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'crete round';
+	src: font-url('CreteRound-Regular.otf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pt sans';
+	src: font-url('PT_sans_55F.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Mixin */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
 }
