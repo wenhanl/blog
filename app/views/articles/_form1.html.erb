@@ -1,4 +1,8 @@
 
+<% #javascript_include_tag '/ckeditor/ckeditor.js' %>
+
+
+
 <% if params.has_key?(:id) %>
   <% action = "update" %>
   <% method = "patch" %>
@@ -7,7 +11,8 @@
   <% method = "post" %>
 <% end %>
 
-<%= form_tag({controller: "articles", action: action}, method: method) do %>
+<%= form_tag({controller: "articles", action: action, }, method: method,
+  class: "pure-form pure-form-stacked") do %>
   <% if @article.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@article.errors.count, "error") %> prohibited
@@ -20,21 +25,25 @@
   </div>
   <% end %>
   <p>
-    <%= label_tag(:title, "Title") %><br>
+    <%= label_tag(:title, "Title") %>
     <%= text_field_tag(:title, @article.title) %>
   </p>
  
   <p>
-    <%= label_tag(:text, "Text") %><br>
+    <%= label_tag(:text, "Text") %>
     <%= text_area_tag(:text, @article.text) %>
   </p>
 
   <p>
-    <%= label_tag(:tag, "Tag") %><br>
+    <%= label_tag(:tag, "Tag") %>
     <%= text_field_tag(:tag, @article.tag.map {|c| c.name}.join(',')) %>
   </p>
  
   <p>
-    <%= submit_tag("Submit") %>
+    <%= submit_tag("Submit", :class => "pure-button pure-button-primary") %>
   </p>
 <% end %>
+
+<script type="text/javascript">
+  CKEDITOR.replace("text");
+</script>
