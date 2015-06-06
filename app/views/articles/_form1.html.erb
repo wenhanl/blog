@@ -1,8 +1,4 @@
 
-<% #javascript_include_tag '/ckeditor/ckeditor.js' %>
-
-
-
 <% if params.has_key?(:id) %>
   <% action = "update" %>
   <% method = "patch" %>
@@ -11,39 +7,23 @@
   <% method = "post" %>
 <% end %>
 
-<%= form_tag({controller: "articles", action: action, }, method: method,
-  class: "pure-form pure-form-stacked") do %>
-  <% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %> prohibited
-      this article from being saved:</h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <p>
-    <%= label_tag(:title, "Title") %>
-    <%= text_field_tag(:title, @article.title) %>
-  </p>
- 
-  <p>
-    <%= label_tag(:text, "Text") %>
-    <%= text_area_tag(:text, @article.text) %>
-  </p>
 
-  <p>
-    <%= label_tag(:tag, "Tag") %>
-    <%= text_field_tag(:tag, @article.tag.map {|c| c.name}.join(',')) %>
-  </p>
- 
-  <p>
-    <%= submit_tag("Submit", :class => "pure-button pure-button-primary") %>
-  </p>
+<%= form_for @article, url: {action: action}, 
+  html: {class: "pure-form pure-form-stacked", method: method} do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title%>
+  <%= f.label :text, "Text" %>
+  <%= f.text_area :text, size:"60x12"%>
+  <%= f.label :tag, "Tag" %>
+  <%= f.text_field :tag, value:@article.tag.map {|c| c.name}.join(',') %>
+  <%= f.submit "Submit", class: "pure-button pure-button-primary"%>
+
 <% end %>
 
+
 <script type="text/javascript">
-  CKEDITOR.replace("text");
+  $(function () {
+
+    CKEDITOR.replace("article_text");
+});
 </script>

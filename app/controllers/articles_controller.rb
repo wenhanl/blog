@@ -11,8 +11,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@article = Article.new(article_params)
-		tag_arr = params[:tag].split(',')
+		@article = Article.new(params.require(:article).permit(:title, :text))
+		tag_arr = params[:article][:tag].split(',')
  		
  		
 		if @article.save
@@ -39,21 +39,21 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
-    @article.tag.delete_all
+    	@article.tag.delete_all
 
-    tag_arr = params[:tag].split(',')
+    	tag_arr = params[:article][:tag].split(',')
 
-		if @article.update(article_params)
-      Article.transaction do
-        tag_arr.each do |name|
-          tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
-          @article.tag.push(tag)
-        end
-      end
-	    redirect_to @article
-    else
-      render 'edit'
-    end
+		if @article.update(params.require(:article).permit(:title, :text))
+      		Article.transaction do
+		        tag_arr.each do |name|
+		          tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
+		          @article.tag.push(tag)
+		        end
+      		end
+	    	redirect_to @article
+   		else
+	    	render 'edit'
+	    end
 	end
 
 	def destroy

@@ -1,13 +1,12 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<%= render 'shared/header' %>
 
-<%= @article.tag.map {|c| c.name}.join(', ') %>
+
+<h1><%= @article.title %></h1>
+
+<%= @article.text.html_safe %>
+
+<p><%= @article.tag.map {|c| c.name}.join(', ') %></p>
  
 <%= link_to 'Back', articles_path %>
+
+<%= render 'shared/footer' %>
