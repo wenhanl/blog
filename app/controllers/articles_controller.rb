@@ -56,6 +56,14 @@ class ArticlesController < ApplicationController
 	    end
 	end
 
+	def upload
+		uploaded_io = params[:article][:img] 
+		File.open(Rails.root.join('public','uploads',
+uploaded_io.original_filename),'wb') do |file|
+			file.write(uploaded_io.read)
+		end
+	end
+
 	def destroy
 		@article = Article.find(params[:id])
  		@article.destroy

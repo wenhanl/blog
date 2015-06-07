@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
 
-	config.extraPlugins = 'codesnippet';
+	config.extraPlugins = 'codesnippet,imagebrowser';
 
 	config.codeSnippet_theme = 'pojoaque';
 
