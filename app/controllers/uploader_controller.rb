@@ -3,9 +3,9 @@ class UploaderController < ApplicationController
 
   end
 
-	def upload
+  def upload
     # upload selected file to server
-		file = params[:upload]
+    file = params[:upload]
     filename = file.original_filename
     basepath = Rails.root.join('public', 'uploads')
     upload_file = basepath.join(filename)
@@ -13,8 +13,8 @@ class UploaderController < ApplicationController
       index = filename.index('.')
       filename.insert(index, '_1')
     end
-		File.open(basepath.join(filename),'wb') do |f|
-			f.write(file.read)
+    File.open(basepath.join(filename), 'wb') do |f|
+      f.write(file.read)
     end
 
     # change image_list to new uploaded file name
@@ -22,9 +22,9 @@ class UploaderController < ApplicationController
 
     content = '[{"image": "/uploads/' + filename + '"}]'
 
-    File.open(listname, 'w') {|f| f.puts content}
+    File.open(listname, 'w') { |f| f.puts content }
 
     render :text => content
-		
-	end
+
+  end
 end

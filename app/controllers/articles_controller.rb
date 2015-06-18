@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 		if @article.save
 		  Article.transaction do
 			  tag_arr.each do |name|
-					tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
+					tag = Tag.find_or_create_by(name: name.strip! || name) # create a new tag only if tag.name not exist
 					@article.tag.push(tag)
 			  end
 			 end
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
 		if @article.update(params.require(:article).permit(:title, :text, :img))
       		Article.transaction do
 		        tag_arr.each do |name|
-		          tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist
+		          tag = Tag.find_or_create_by(name: name.strip! || name) # create a new tag only if tag.name not exist
 		          @article.tag.push(tag)
 		        end
       		end

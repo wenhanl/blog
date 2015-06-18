@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require pure-min
+ *= require highlight/monokai_sublime
  */
 
 @import 'base';
@@ -77,6 +78,7 @@
 
 .list-item {
 	margin-bottom: 18px;
+	overflow: hidden;
 
 	.tags {
 		color: #f00;
