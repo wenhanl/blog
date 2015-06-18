@@ -15,6 +15,7 @@
  */
 
 @import 'base';
+@import 'articles';
 
 
 
@@ -75,6 +76,7 @@
 }
 
 .list-item {
+	margin-bottom: 18px;
 
 	.tags {
 		color: #f00;
@@ -129,8 +131,6 @@
 	img {
 		float: right;
 		width: 200px;
-		min-height: 60px;
-		max-height: 100px;
 		margin: 0 0 0.2em 1em;
 	}
 }
@@ -172,3 +172,6 @@
 		color: #fff;
 	}
 }
+
+
+

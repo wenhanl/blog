@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@article = Article.new(params.require(:article).permit(:title, :text))
+		@article = Article.new(params.require(:article).permit(:title, :text, :img))
 		tag_arr = params[:article][:tag].split(',')
  		
  		
@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
 
     	tag_arr = params[:article][:tag].split(',')
 
-		if @article.update(params.require(:article).permit(:title, :text))
+		if @article.update(params.require(:article).permit(:title, :text, :img))
       		Article.transaction do
 		        tag_arr.each do |name|
 		          tag = Tag.find_or_create_by(name: name) # create a new tag only if tag.name not exist

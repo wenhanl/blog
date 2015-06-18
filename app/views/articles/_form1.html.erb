@@ -29,14 +29,16 @@
   <%= f.text_area :text, size:"60x12"%>
   <%= f.label :tag, "Tag" %>
   <%= f.text_field :tag, value:@article.tag.map {|c| c.name}.join(',') %>
+  <%= f.label :img, "Select Cover Image" %>
+  <ul id="cover-image"><li><a href="javascript:void(0)" id="img-refresh">refresh</a></li></ul>
+  
 
-  <%=f.file_field :img %>
   <%= f.submit "Submit", class: "pure-button pure-button-primary"%>
 
 <% end %>
 
 
-<script type="text/javascript">
+<script>
   $(function () {
 
     CKEDITOR.replace("article_text", {
@@ -44,5 +46,20 @@
       filebrowserUploadUrl: '/uploader',
       "imageBrowser_listUrl": "/uploads/image_list.json"
     });
+
+    $("#img-refresh").click(function(){
+      var images = $(".cke_wysiwyg_frame").contents().find("img");
+      var index = 1;
+      $.each(images, function(){
+        var newChoice = "<li>";
+        newChoice += "<input type=\"radio\" name=\"article[img]\" value=\"" + this.src + "\" id=\"radio_" + index + "\" />";
+        newChoice += "<label for=\"radio_" + index + "\"> <img src=\"" + this.src + "\" height=\"100\"/></label>";
+        newChoice += "</li>";
+
+        $("#cover-image").prepend(newChoice);
+      });
+    });
+
+    $("#img-refresh").click();
   });
 </script>

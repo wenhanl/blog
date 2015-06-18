@@ -19,7 +19,6 @@ class UploaderController < ApplicationController
 
     # change image_list to new uploaded file name
     listname = basepath.join('image_list.json')
-    #content = File.read(listname)
 
     content = '[{"image": "/uploads/' + filename + '"}]'
 

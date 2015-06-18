@@ -1,15 +1,18 @@
 <div class="list-item">
-	<h2 class="post-title">Welcome to Kella</h2>
-	<ul class="subtitle"><li>FEB 12, 2015</li></ul>
-
-	<img src="http://live.bobosh.com/path/wp-content/uploads/2014/01/Untitled-111.jpg" width="200"/>
+	<h2 class="post-title"><%= link_to article.title, article_path(article) %></h2>
+	<ul class="subtitle"><li><%= article.created_at.strftime("%B %d, %Y") %></li></ul>
+    <% if not article.img.nil? %>
+	    <img src="<%= article.img %>" width="200"/>
+    <% end %>
 	<p>
-		Use the shorter dimension of the image to fill the space allowed for the image. (if the image is 500x350 and the thumbnail size was to be 250x250 then the image height would fill the thumbnail) then I'm trying to center the image in the other dimension. 
+		<% if not article.text.nil? %>
+	    	<%= article.text.gsub(/<img .*?>/i, '').html_safe %> 
+    	<% end %> 
 	</p>
 
 	<ul class="tags">
-		<li><a href="#">test</a></li>
-		<li><a href="#">haha</a></li>
-		<li><a href="#">tdd</a></li>
+		<% article.tag.each do |t| %>
+			<li><a href="#"><%= t.name %></a></li>
+		<% end %>
 	</ul>
 </div>
