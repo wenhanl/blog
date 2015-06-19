@@ -2,8 +2,10 @@ class ArticlesController < ApplicationController
 	include ArticlesHelper
 	#http_basic_authenticate_with name: "admin", password: "1", except: [:index, :show]
 
+  before_action :authenticate_admin!, except: [:index, :show]
+
 	def index
-		@articles = Article.all
+		@articles = Article.all.order(created_at: :desc)
 	end
 
 	def new
