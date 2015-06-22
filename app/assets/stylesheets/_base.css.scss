@@ -1,8 +1,10 @@
+
+
 html,
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #eee;
+	background-color: #fff;
 	font-family: "open sans";
 }
 
@@ -41,6 +43,13 @@ a {
 	src: font-url('OpenSans.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@font-face {
+  font-family: "open sans";
+  src: font-url("open-sans/OpenSans-Bold.ttf");
+  font-style: normal;
+  font-weight: bold;
 }
 
 @font-face {

@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require ckeditor/ckeditor
 //= require jquery
 //= require jquery_ujs
+//= require toc.min
 //= require turbolinks
+
 
 
