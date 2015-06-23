@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_self
+ *= require hover
  *= require pure-min
  *= require highlight/monokai_sublime
  */
@@ -28,38 +29,38 @@
 	padding: 8px 0 12px 0;
 	background-color: #fff;
 	z-index: 999;
+	overflow: none;
 
-	.nav-bar {
-		float: right;
-	}
 
-	ul {
-		list-style: none;
-		display: block;
-		margin: 8px;
-	}
-	li {
+	nav a {
+		position: relative;
 		display: inline-block;
-		padding: 2px 4px;
-		margin-right: 18px;
-		font-size: 16px;
-		font-family: 'raleway', arial;
-		font-weight: 700;
-	}
-
-	a {
-		padding: 3px 2px;
-		text-decoration: none;
+		margin: 10px 18px ;
+		outline: none;
 		color: #444;
+		font-family: "raleway";
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+		text-shadow: 0 0 1px rgba(255,255,255,0.3);
+		font-size: 1em;
 	}
 
-	a:hover {
-		border-bottom: 2px solid #D19E29;
+	nav a:hover,
+	nav a:focus {
+		outline: none;
 	}
 
-	.selected {
-		border-bottom: 2px solid #D19E29;
+	nav a.selected {
+		border-bottom: 3px #D19E29 solid;
 	}
+
+	a.selected:hover {
+		border-bottom: none;
+	}
+
+
 }
 
 .container {
@@ -71,10 +72,13 @@
 	float: left;
 	background-color: #fff;
 	padding: 18px;
-	margin: 0;
 	margin-top: 25px;
 	width: 65%;
-    text-align: justify;
+
+    article {
+      text-align: justify;
+    }
+
 }
 
 .list-item {
@@ -147,55 +151,62 @@
 		font-family: "bold raleway";
 		font-size: 16px;
 	}
-}
 
-.intro {
-	background-color: #fff;
-	padding: 8px;
+  .intro {
+    background-color: #fff;
+    padding: 8px;
 
-	img {
-		width: 100%;
-		@include border-radius(200px);
-		padding: 4px;
-		border: 1px solid #aaa;
+    img {
+      width: 100%;
+      @include border-radius(200px);
+      padding: 4px;
+      border: 1px solid #aaa;
 
-	}
-}
-
-.tag-cloud {
-	li {
-		display: inline-block;
-		margin: 0 7px 10px 0;
-	}
-
-	a {
-		background-color: #D19E29;
-		padding: 2px 4px;
-		color: #fff;
-	}
-}
-
-.side-box {
-  border: solid 6px #ccc;
-  padding: 10px 10px 20px 25px;
-
-  h2 {
-    letter-spacing: 2px;
-    font-family: "bold raleway";
-    font-size: 16px;
+    }
   }
 
-  hr {
-    height: 3px;
-    border: 0;
-    background-color: #D19E29;
-    color: #D19E29;
-    width: 50px;
-    text-align: left;
-    margin-left: 0;
+  .tag-cloud {
+    li {
+      display: inline-block;
+      margin: 0 5px 10px 0;
+    }
 
+    a {
+      background-color: #D19E29;
+      padding: 2px 4px;
+      color: #fff;
+      border: 2px solid #fff;
+      -webkit-transition: width 1s, height 1s, border-color 0.5s, background-color 1s;
+      -moz-transition: width 1s, height 1s, border-color 0.5s, background 1s;
+      transition: width 1s, height 1s, border-color 0.5s, background-color 1s;
+    }
+
+    a:hover {
+    	//background-color: #F28022;
+    	border: 2px solid #888;
+    }
+  }
+
+  .side-box {
+    border: solid 6px #ccc;
+    padding: 10px 10px 20px 25px;
+    margin-bottom: 20px;
+
+    hr {
+      height: 3px;
+      border: 0;
+      background-color: #D19E29;
+      color: #D19E29;
+      width: 50px;
+      text-align: left;
+      margin-left: 0;
+      margin-bottom: 15px;
+
+    }
   }
 }
+
+
 
 
 
