@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag 'highlight/monokai_sublime' %>
 <%= javascript_include_tag 'highlight/highlight.pack'  %>
 
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 
@@ -37,6 +36,9 @@
 
 <script>
     $(function () {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
         $('.toc').toc({
             'selectors': 'h2,h3', //elements to use as headings
             'container': 'article', //element to find all selectors in

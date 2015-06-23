@@ -6,11 +6,12 @@
 	    <img src="<%= article.img %>" width="200"/>
     <% end %>
 	<section>
+
 		<% if not article.text.nil? %>
 			<% if not has_image %>
-	    		<%= truncate_html(article.text.gsub(/<img .*?>/i, ''), length: 400, omission: '...') %> 
+	    		<%= truncate_html(sanitize(article.text, {:tags=>['a', 'p']}), length: 400, omission: '...') %>
 	    	<% else %>
-	    		<%= truncate_html(article.text.gsub(/<img .*?>/i, ''), length: 250, omission: '...') %> 
+	    		<%= truncate_html(sanitize(article.text, {:tags=>['a']}), length: 300, omission: '...') %>
 	    	<% end %>
     	<% end %> 
 	</section>
