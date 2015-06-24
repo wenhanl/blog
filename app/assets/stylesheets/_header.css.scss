@@ -1,0 +1,39 @@
+// Header
+.header {
+	border-bottom: 2px solid #aaa;
+	width: 100%;
+	margin: 0;
+	padding: 8px 0 12px 0;
+	background-color: #fff;
+	z-index: 999;
+	overflow: none;
+
+
+	nav a {
+		position: relative;
+		display: inline-block;
+		margin: 12px 18px ;
+		outline: none;
+		color: #444;
+		font-family: "raleway";
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+		text-shadow: 0 0 1px rgba(255,255,255,0.3);
+		font-size: 0.8em;
+	}
+
+	nav a:hover,
+	nav a:focus {
+		outline: none;
+	}
+
+	nav a.selected {
+		border-bottom: 3px #D19E29 solid;
+	}
+
+	a.selected:hover {
+		border-bottom: none;
+	}
+}

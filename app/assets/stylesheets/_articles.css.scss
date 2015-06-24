@@ -7,3 +7,28 @@
 	display: inline-block;
 	margin-right: 10px;
 }
+
+.toc{
+
+	a,
+	a:visited {
+		font-size: 18px;
+		color: #444;
+		font-family: "roboto";
+		letter-spacing: 1px;
+	}
+
+	a:hover {
+		color: #D19E29;
+	}
+
+
+	.h3 {
+		padding-left: 15px;
+	}
+
+	.toc-active {
+		font-weight: bold;
+		font-size: 20px;
+	}
+}

@@ -32,23 +32,27 @@ a {
 
 
 /* Fonts*/
+
+
+// Raleway
 @font-face {
   font-family: 'raleway';
-  src:   font-url('Raleway-SemiBold.ttf') format('truetype');
+  src:   font-url('raleway/Raleway-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-	font-family: 'bold raleway';
-	src: font-url('Raleway-Bold.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'raleway';
+	src: font-url('raleway/Raleway-Bold.ttf') format('truetype');
+	font-weight: bold;
 	font-style: normal;
 }
 
+// Open sans
 @font-face {
 	font-family: 'open sans';
-	src: font-url('OpenSans.ttf') format('truetype');
+	src: font-url('open-sans/OpenSans-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -60,17 +64,34 @@ a {
   font-weight: bold;
 }
 
+// Crete round
 @font-face {
 	font-family: 'crete round';
-	src: font-url('CreteRound-Regular.otf') format('truetype');
+	src: font-url('crete-round/CreteRound-Regular.otf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// PT sans
+@font-face {
+	font-family: 'pt sans';
+	src: font-url('PT-Sans/PTS55F.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// roboto
+@font-face {
+	font-family: 'roboto';
+	src: font-url('roboto/Roboto-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'pt sans';
-	src: font-url('PT_sans_55F.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'roboto';
+	src: font-url('roboto/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
 	font-style: normal;
 }
 
