@@ -10,7 +10,7 @@ $(function () {
     /**
      * Table of Contents
      */
-    $('.toc').toc({
+    $('#toc').toc({
         'selectors': 'h2,h3', //elements to use as headings
         'container': 'article', //element to find all selectors in
         'smoothScrolling': true, //enable or disable smooth scrolling on click
@@ -28,5 +28,9 @@ $(function () {
             return $heading[0].tagName.toLowerCase();
         }
     });
+
+    if ($('#toc').text() == '') {
+        $('.toc').remove();
+    }
 
 });

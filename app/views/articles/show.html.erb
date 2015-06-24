@@ -7,7 +7,7 @@
 
 <%= render 'shared/header' %>
 
-<div class="left-container">
+<div class="left-container article-view-left">
     <h1><%= @article.title %></h1>
 
     <article><%= @article.text.html_safe %></article>
@@ -16,12 +16,12 @@
     <%= link_to 'Back', articles_path %>
 </div>
 
-<div class="side-bar">
-  <div class="side-box">
+<div class="side-bar article-view-right">
+  <div class="side-box toc">
     <h2>INDEX</h2>
 
     <hr>
-    <div class="toc"></div>
+    <div id="toc"></div>
   </div>
 
   <div class="side-box">
