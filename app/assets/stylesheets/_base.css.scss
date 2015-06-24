@@ -6,6 +6,7 @@ body {
 	padding: 0;
 	background-color: #fff;
 	font-family: "open sans";
+	color: #555;
 }
 
 ul {
@@ -26,8 +27,19 @@ a {
 	float: left;
 }
 
-.main {
-	margin-top: 0;
+
+
+.container {
+	margin: 0 auto;
+	width: 80%;
+}
+
+h1 {
+	color: #333;
+}
+
+p {
+	color: #555;
 }
 
 
@@ -80,6 +92,13 @@ a {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'pt sans';
+	src: font-url('PT-Sans/PTC75F.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
 // roboto
 @font-face {
 	font-family: 'roboto';
@@ -91,6 +110,21 @@ a {
 @font-face {
 	font-family: 'roboto';
 	src: font-url('roboto/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+// oswald
+@font-face {
+	font-family: 'oswald';
+	src: font-url('oswald/Oswald-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'oswald';
+	src: font-url('oswald/Oswald-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
