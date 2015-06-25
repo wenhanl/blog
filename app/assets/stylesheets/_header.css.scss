@@ -3,11 +3,11 @@
 	border-bottom: 2px solid #aaa;
 	width: 100%;
 	margin: 0;
-	padding: 8px 0 12px 0;
+	padding: 8px 0 10px 0;
 	background-color: #fff;
 	position: fixed;
 	z-index: 999;
-	overflow: none;
+	overflow: hidden;
 
 
 	nav a {
@@ -23,6 +23,7 @@
 		font-weight: 400;
 		text-shadow: 0 0 1px rgba(255,255,255,0.3);
 		font-size: 0.8em;
+		border-bottom: 3px #fff solid;
 	}
 
 	nav a:hover,
@@ -35,6 +36,6 @@
 	}
 
 	a.selected:hover {
-		border-bottom: none;
+		border-bottom: #fff;
 	}
 }

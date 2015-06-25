@@ -18,7 +18,7 @@
 
 	<ul class="tags">
 		<% article.tag.each do |t| %>
-			<li><a href="#"><%= t.name %></a></li>
+			<li><%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %></li>
 		<% end %>
 	</ul>
 </div>

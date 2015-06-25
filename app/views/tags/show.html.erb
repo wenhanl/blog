@@ -1,10 +1,14 @@
 <%= render 'shared/header' %>
 
-
+<%= params[:id] %>
 <div class="list-container">
-	<%= render 'shared/list_item' %>
+	<% if not @articles.nil? %>
+		<% @articles.each do |article| %>
+	      <%= render 'shared/list_item', article: article %>
+	  	<% end %>
+	<% end %>
 </div>
 
-<%= render 'shared/side_bar' %>
+<%= render 'shared/side_bar', tags: @tags %>
 
 <%= render 'shared/footer' %>

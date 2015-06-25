@@ -6,60 +6,12 @@
 
 	<h2>TAGS</h2>
 	<ul class="tag-cloud">
-		<li>
-			<a href="#"  class="selected">Home</a>
-		</li>
-		<li>
-			<a href="#">Projects</a>
-		</li>
-		<li>
-			<a href="#">Resume</a>
-		</li>
-		<li>
-			<a href="#"  class="selected">Home</a>
-		</li>
-		<li>
-			<a href="#">Projects</a>
-		</li>
-		<li>
-			<a href="#">Resume</a>
-		</li>
-		<li>
-			<a href="#"  class="selected">Home</a>
-		</li>
-		<li>
-			<a href="#">Projects</a>
-		</li>
-		<li>
-			<a href="#">Resume</a>
-		</li>
+		<% tags.each do |t| %>
+			<li>
+				<%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %>
+			</li>
+		<% end %>
+		
 	</ul>
-
-
-  <% if admin_signed_in? %>
-      <h2>ADMIN</h2>
-
-      <table class="pure-table">
-
-        <% @articles.each do |article| %>
-            <tr>
-              <td><%= article.title %></td>
-              <td><%= link_to 'Edit', edit_article_path(article) %></td>
-              <td><%= link_to 'Destroy', article_path(article),
-                              method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% end %>
-      </table>
-
-      <br/>
-      <%= link_to 'New article', new_article_path %>&nbsp;
-  <% end %>
-
-
-  <% if admin_signed_in? %>
-    <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
-  <% else %>
-    <%= link_to('Login', new_admin_session_path)  %>
-  <% end %>
 	
 </div>
