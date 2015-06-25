@@ -1,9 +1,9 @@
 <%= render 'shared/header' %>
 
-<%= params[:id] %>
-<div class="list-container">
-	<% if not @articles.nil? %>
-		<% @articles.each do |article| %>
+<div class="left-container">
+	<h1> Tag: #<%= @current_tag.name %> </h1>
+	<% if not @current_tag.nil? %>
+		<% @current_tag.article.each do |article| %>
 	      <%= render 'shared/list_item', article: article %>
 	  	<% end %>
 	<% end %>

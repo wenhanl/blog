@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def show
-  	@article = Tag.includes(:article).find(params[:id]).article
+  	@current_tag = Tag.find(params[:id])
   	@tags = Tag.all
   end
 end

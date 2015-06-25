@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619132731) do
+ActiveRecord::Schema.define(version: 20150625110043) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,15 +40,16 @@ ActiveRecord::Schema.define(version: 20150619132731) do
   end
 
   create_table "articles_tags", id: false, force: true do |t|
-    t.integer "article_id", null: false
-    t.integer "tag_id",     null: false
+    t.integer "article_id"
+    t.integer "tag_id"
   end
 
-  add_index "articles_tags", ["article_id", "tag_id"], name: "index_articles_tags_on_article_id_and_tag_id", using: :btree
-  add_index "articles_tags", ["tag_id", "article_id"], name: "index_articles_tags_on_tag_id_and_article_id", using: :btree
+  add_index "articles_tags", ["article_id"], name: "index_articles_tags_on_article_id", using: :btree
+  add_index "articles_tags", ["tag_id"], name: "index_articles_tags_on_tag_id", using: :btree
 
   create_table "tags", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "blog_count"
   end
 
   create_table "users", force: true do |t|

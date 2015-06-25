@@ -1,12 +1,10 @@
-<% @title = ' - Home' %>
+<% @title = '' %>
 
 <%= render 'shared/header' %>
 
 <div class="left-container">
   <% @articles.each do |article| %>
-    <tr>
       <%= render 'shared/list_item', article: article %>
-    </tr>
   <% end %>
   
 </div>
