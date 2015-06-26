@@ -3,15 +3,29 @@
 		<%= image_tag "avatar_1.jpg" %>
 		<p> This is a NB blog. </p>
 	</div> -->
+	<div class="intro">
+		<div class="background">
+			<%= image_tag "/avatar/a_1.jpg" %></div>
+		<!-- <div class="avatar-container" >
+			<%= image_tag "avatar_1.jpg" %>
+		</div> -->
 
-	<h2>TAGS</h2>
-	<ul class="tag-cloud">
-		<% tags.each do |t| %>
-			<li>
-				<%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %>
-			</li>
-		<% end %>
-		
-	</ul>
+		<section>
+			<p> <strong>Wenhan Lu @ AWS</strong> </p>
+			<p> CMU / Distributed System / Cloud / Hadoop / Security </p>
+			<p> Stay tuned for more blogs!</p>
+		</section>
+	</div>
+
+
+		<h2>TAGS</h2>
+		<ul class="tag-cloud">
+			<% tags.each do |t| %>
+				<li>
+					<%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %>
+				</li>
+			<% end %>
+			
+		</ul>
 	
 </div>
