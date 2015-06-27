@@ -13,8 +13,6 @@
 
 <% if admin_signed_in? %>
 	<%= render 'shared/admin', articles: @articles %>
-<% else %>
-	<%= link_to('Login', new_admin_session_path)  %>
 <% end %>
 
 <%= render 'shared/footer' %>
