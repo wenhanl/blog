@@ -12,6 +12,7 @@ $(function () {
     /**
      * Register click event handler to refresh cover image choices included in text area
      */
+    var container = $("#cover-image");
     $("#img-refresh").click(function () {
         var images = $(".cke_wysiwyg_frame").contents().find("img");
         var index = 1;
@@ -21,13 +22,12 @@ $(function () {
             newChoice += "<label for=\"radio_" + index + "\"> <img src=\"" + this.src + "\" height=\"100\"/></label>";
             newChoice += "</li>";
 
-            $("#cover-image").prepend(newChoice);
+            container.prepend(newChoice);
+            index++;
         });
 
         var defaultChoice = "<li><input type=\"radio\" name=\"article[img]\" value=\"null\" id=\"radio_" + index + "\" />";
         defaultChoice += "<label for=\"radio_" + index + "\"> Null</label></li>";
         $("#cover-image").append(defaultChoice);
     });
-
-    $("#img-refresh").click();
 });

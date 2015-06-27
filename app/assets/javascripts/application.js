@@ -11,11 +11,12 @@
 // about supported directives.
 //
 
-//= require ckeditor/ckeditor
 //= require jquery
 //= require jquery_ujs
-//= require toc.min
 //= require turbolinks
+//= require_self
+
+
 
 
 
