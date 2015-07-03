@@ -1,14 +1,7 @@
 <div class="side-bar">
-	<!-- <div class="intro">
-		<%= image_tag "avatar_1.jpg" %>
-		<p> This is a NB blog. </p>
-	</div> -->
 	<div class="intro">
 		<div class="background">
 			<%= image_tag "/avatar/a_1.jpg" %></div>
-		<!-- <div class="avatar-container" >
-			<%= image_tag "avatar_1.jpg" %>
-		</div> -->
 
 		<section>
 			<p> <strong>Wenhan Lu @ AWS</strong> </p>
@@ -28,4 +21,7 @@
 			
 		</ul>
 	
+	<% if admin_signed_in? %>
+		<%= render 'shared/admin', articles: @articles %>
+	<% end %>
 </div>

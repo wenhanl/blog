@@ -9,11 +9,9 @@
   
 </div>
 
-<%= render 'shared/side_bar', tags: @tags %>
+<%= render 'shared/side_bar', tags: @tags, articles: @articles %>
 
-<% if admin_signed_in? %>
-	<%= render 'shared/admin', articles: @articles %>
-<% end %>
+
 
 <%= render 'shared/footer' %>
 
