@@ -21,7 +21,7 @@
 			
 		</ul>
 	
-	<% if admin_signed_in? %>
+	<% if admin_signed_in? && articles %>
 		<%= render 'shared/admin', articles: @articles %>
 	<% end %>
 </div>
