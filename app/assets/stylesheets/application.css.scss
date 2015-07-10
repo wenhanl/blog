@@ -155,32 +155,8 @@
     	height: 140px;
     	background-image: url(/images/back.jpg);
     	background-size: 100% 100%;
-    	//border: 3px #ccc solid;
     }
 
-
-
-    // .avatar-container {
-    // 	position: relative;
-    // 	top: -100px;
-    // 	margin: 5px auto;
-    // 	@include border-radius(200px);
-    // 	background-color: #fff;
-    // 	width: 108px;
-    // 	height: 108px;
-    // 	border: 1px solid #aaa;
-    // }
-    // img {
-    // 	position: absolute;
-    // 	top:0;
-    // 	bottom:0;
-    // 	left: 0;
-    // 	right: 0;
-    // 	margin: auto;
-    //   	width: 100px;
-    //   	@include border-radius(200px);
-      	
-    // }
 
     img {
     	display: block;
@@ -243,4 +219,5 @@
 }
 
 @import 'article_view';
+@import 'form'
 
