@@ -1,0 +1,10 @@
+.pure-form label {
+	font-weight: bold;
+	margin: 8px 0;
+	font-size: 18px;
+}
+
+input.pure-button-primary{
+	margin: 5px 0;
+	@include border-radius(5px);
+}
