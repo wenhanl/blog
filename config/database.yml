@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: <%= ENV['DB_PASS'] %>
   socket: /tmp/mysql.sock
 
 development:
@@ -51,4 +51,5 @@ production:
   <<: *default
   database: blog_production
   username: root
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DB_PASS'] %>
+  

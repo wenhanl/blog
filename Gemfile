@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'truncate_html'
 
 gem 'devise'
+
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 # Use ActiveModel has_secure_password
 
 # gem 'bcrypt', '~> 3.1.7'
