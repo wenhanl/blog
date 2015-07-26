@@ -4,6 +4,10 @@
 	font-size: 18px;
 }
 
+.pure-form input[type='text'] {
+	width: 60%;
+}
+
 input.pure-button-primary{
 	margin: 5px 0;
 	@include border-radius(5px);
