@@ -1,5 +1,5 @@
 
-<%= javascript_include_tag 'ckeditor/ckeditor' %>
+
 <%= javascript_include_tag 'article_edit' %>
 
 
@@ -10,6 +10,7 @@
     <% action = "create" %>
     <% method = "post" %>
 <% end %>
+
 
 <%= form_for @article, url: {action: action},
              html: {class: "pure-form pure-form-stacked", method: method} do |f| %>
@@ -30,7 +31,7 @@
     <%= f.label :title, "Title" %>
     <%= f.text_field :title %>
     <%= f.label :text, "Text" %>
-    <%= f.text_area :text, size: "60x12" %>
+    <%= f.cktext_area :text, rows: 20 %>
     <%= f.label :tag, "Tag" %>
     <%= f.text_field :tag, value: @article.tag.map { |c| c.name }.join(',') %>
     <%= f.label :img, "Select Cover Image" %>
