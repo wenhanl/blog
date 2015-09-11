@@ -1,17 +1,17 @@
 <div class="list-item">
 	<h2 class="post-title"><%= link_to article.title, article_path(article) %></h2>
 	<ul class="subtitle"><li><%= article.created_at.strftime("%B %d, %Y") %></li></ul>
-	<% has_image = (not article.img.nil? and article.img != 'null') %>
-    <% if has_image %>
-	    <img src="<%= article.img %>" width="200"/>
+
+    <% if article.pic? %>
+      <%= image_tag article.pic.url(:small) %>
     <% end %>
 	<section>
 
 		<% if not article.text.nil? %>
-			<% if not has_image %>
-	    		<%= truncate_html(sanitize(article.text, {:tags=>['a', 'p']}), length: 400, omission: '...') %>
+			<% if not article.pic? %>
+	    		<%= truncate_html(sanitize(article.text, {:tags=>['a', 'p']}), length: 400, omission: '&nbsp...') %>
 	    	<% else %>
-	    		<%= truncate_html(sanitize(article.text, {:tags=>['a']}), length: 300, omission: '...') %>
+	    		<%= truncate_html(sanitize(article.text, {:tags=>['a']}), length: 300, omission: '&nbsp...') %>
 	    	<% end %>
     	<% end %> 
 	</section>

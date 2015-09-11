@@ -13,7 +13,7 @@
 
 
 <%= form_for @article, url: {action: action},
-             html: {class: "pure-form pure-form-stacked", method: method} do |f| %>
+             html: {class: "pure-form pure-form-stacked", method: method, :multipart => true} do |f| %>
     <% if @article.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -34,10 +34,11 @@
     <%= f.cktext_area :text, rows: 20 %>
     <%= f.label :tag, "Tag" %>
     <%= f.text_field :tag, value: @article.tag.map { |c| c.name }.join(',') %>
-    <%= f.label :img, "Select Cover Image" %>
-    <ul id="cover-image">
+    <%= f.label :pic, "Upload Cover Image" %>
+    <%= f.file_field :pic %>
+    <!-- <ul id="cover-image">
       <li><a href="javascript:void(0)" id="img-refresh">refresh</a></li>
-    </ul>
+    </ul> -->
 
 
     <%= f.submit "Submit", class: "pure-button pure-button-primary" %>
