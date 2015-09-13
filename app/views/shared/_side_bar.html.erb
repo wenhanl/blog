@@ -1,25 +1,14 @@
 <div class="side-bar">
-	<div class="intro">
-		<div class="background">
-			<%= image_tag "/avatar/a_1.jpg" %></div>
 
-		<section>
-			<p> <strong>Wenhan Lu @ AWS</strong> </p>
-			<p> CMU / Distributed System / Cloud / Hadoop / Security </p>
-			<p> Stay tuned for more blogs!</p>
-		</section>
-	</div>
-
-
-		<h2>TAGS</h2>
-		<ul class="tag-cloud">
-			<% tags.each do |t| %>
-				<li>
-					<%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %>
-				</li>
-			<% end %>
-			
-		</ul>
+	<h2>TAGS</h2>
+	<ul class="tag-cloud">
+		<% tags.each do |t| %>
+			<li>
+				<%= link_to(t.name, controller: 'tags', action: 'show', id: t.id)  %>
+			</li>
+		<% end %>
+		
+	</ul>
 	
 	<% if admin_signed_in? && articles %>
 		<%= render 'shared/admin', articles: @articles %>
