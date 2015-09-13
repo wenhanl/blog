@@ -1,0 +1,10 @@
+<%= render 'shared/header' %>
+
+<div class="left-container">
+  <% @articles.each do |article| %>
+      <%= render 'list_item', article: article %>
+  <% end %>
+  
+</div>
+
+<%= render 'shared/footer' %>

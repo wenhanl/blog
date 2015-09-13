@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'tag/:id', to:'tags#show'
 
+  get 'backend', to: 'backend#index'
+
   post 'uploader', to: 'uploader#upload'
   get 'uploader', to: 'uploader#index'
   

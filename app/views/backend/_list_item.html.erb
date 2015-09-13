@@ -1,6 +1,13 @@
 <div class="list-item">
 	<h2 class="post-title"><%= link_to article.title, article_path(article) %></h2>
-	<ul class="subtitle"><li><%= article.created_at.strftime("%B %d, %Y") %></li></ul>
+	<ul class="subtitle">
+		<li>
+			<%= article.created_at.strftime("%B %d, %Y") %>
+		    <span><%= link_to 'Edit', edit_article_path(article) %></span>
+		    <span><%= link_to 'Destroy', article_path(article),
+		                        method: :delete, data: { confirm: 'Are you sure?' } %></span>
+		</li>
+	</ul>
 
     <% if article.pic? %>
       <%= image_tag article.pic.url(:small) %>
