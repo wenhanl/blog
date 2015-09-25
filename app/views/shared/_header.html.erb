@@ -1,6 +1,44 @@
+<%= stylesheet_link_tag 'slick' %>
+<%= javascript_include_tag "slick.min" %>
+
+<script>
+	$(function(){	
+		var slider = $(".slider");
+		slider.slick({
+			arrows: false,
+			initialSlide: 1
+		});
+
+		$(".tab-about").click(function(){
+			slider.slick('slickGoTo', 0);
+			var curr = $(".tab-about");
+			curr.siblings().removeClass("selected");
+			curr.addClass("selected");
+		});
+		$(".tab-blog").click(function(){
+			var curr = $(".tab-blog");
+			if (curr.hasClass("selected")) {
+				window.location = "/";
+			} else {
+				slider.slick('slickGoTo', 1);
+				curr.siblings().removeClass("selected");
+				curr.addClass("selected");
+			}
+
+		});
+		$(".tab-resume").click(function(){
+			slider.slick('slickGoTo', 2);
+			var curr = $(".tab-resume");
+			curr.siblings().removeClass("selected");
+			curr.addClass("selected");
+		});
+	});
+	
+</script>
+
 <div class="header lazy" data-original="wooden-background.jpg">
 	<%= image_tag "/avatar/avatar.jpg", :class => "avatar"%>
-	<h1>Wenhan Lu</h1>
+	<h1><a href="/">Wenhan Lu</a></h1>
 	<h2>@ AWS S3</h2>
 	<p> CMU / Distributed System / Cloud / Hadoop </p>
 	<div class="social">
@@ -24,3 +62,10 @@
 </div>
 
 <div class="container main" data-no-turbolink>
+	<div class="slider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
+
+	<div class="section-about">
+		<h1>Stay tuned!</h>
+	</div>
+
+	<div class="section-blog">

@@ -36,6 +36,14 @@
     	text-align: center;
     	font-size: 36px;
     	margin-bottom: 5px;
+
+    	a {
+    		color: #fff;
+    	}
+
+    	a:hover {
+    		text-decoration: underline; 
+    	}
     }
 
     h2 {

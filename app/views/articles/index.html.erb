@@ -1,62 +1,14 @@
-<%= stylesheet_link_tag 'slick' %>
-<%= javascript_include_tag "slick.min" %>
 
-<script>
-	$(function(){	
-		var slider = $(".slider");
-		slider.slick({
-			arrows: false,
-			initialSlide: 1
-		});
-
-		$(".tab-about").click(function(){
-			slider.slick('slickGoTo', 0);
-			var curr = $(".tab-about");
-			curr.siblings().removeClass("selected");
-			curr.addClass("selected");
-		});
-		$(".tab-blog").click(function(){
-			slider.slick('slickGoTo', 1);
-			var curr = $(".tab-blog");
-			curr.siblings().removeClass("selected");
-			curr.addClass("selected");
-		});
-		$(".tab-resume").click(function(){
-			slider.slick('slickGoTo', 2);
-			var curr = $(".tab-resume");
-			curr.siblings().removeClass("selected");
-			curr.addClass("selected");
-		});
-	}
-	);
-	
-</script>
 
 <%= render 'shared/header' %>
-
-<div class="slider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
-
-	<div class="section-about">
-		<h1>Stay tuned!</h>
+	<div class="left-container">
+	  <% @articles.each do |article| %>
+	      <%= render 'shared/list_item', article: article %>
+	  <% end %>
+	  
 	</div>
 
-	<div class="section-blog">
-		<div class="left-container">
-		  <% @articles.each do |article| %>
-		      <%= render 'shared/list_item', article: article %>
-		  <% end %>
-		  
-		</div>
-
-		<%= render 'shared/side_bar', tags: @tags, articles: @articles %>
-	</div>
-
-	<div class="section-resume">
-		<h1>Stay tuned!</h1>
-	</div>
-
-</div>
-
+	<%= render 'shared/side_bar', tags: @tags, articles: @articles %>
 
 <%= render 'shared/footer' %>
 
