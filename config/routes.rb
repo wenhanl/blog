@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   get 'tag/:id', to:'tags#show'
 
   get 'backend', to: 'backend#index'
-
-  post 'uploader', to: 'uploader#upload'
-  get 'uploader', to: 'uploader#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
