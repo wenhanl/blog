@@ -6,3 +6,4 @@ Rails.application.config.assets.precompile += %w( toc.min.js);
 Rails.application.config.assets.precompile += %w( slick.css );
 Rails.application.config.assets.precompile += %w( slick.min.js );
 Rails.application.config.assets.precompile += %w( ckeditor/* );
+Rails.application.config.assets.precompile += %w( barrating/barrating.js );

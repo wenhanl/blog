@@ -1,0 +1,137 @@
+.section-resume {
+  h2 {
+    clear:both;
+  }
+  .resume-left {
+    width: 650px;
+    float: left;
+
+    ul li {
+      margin: 6px 0;
+
+      span {
+        color: $color-2;
+      }
+
+      h3 {
+        margin: 0 0 10px 0;
+      }
+      img {
+        width: 12%;
+        float: left;
+      }
+
+      .exp-info {
+        width: 80%;
+        float: right;
+      }
+    }
+
+    ul.edu li {
+      display: inline-block;
+      width: 320px;
+    }
+  }
+
+
+  .h2-separator {
+    float: left;
+    width: 180px;
+    height: 2px;
+    position: relative;
+    margin-bottom: 20px;
+    background: $color-2;
+  }
+
+  .h2-separator::before {
+    background: $color-2;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+  }
+
+  .skill {
+    width: 300px;
+    margin-top: 0;
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h4 {
+      color: $color-2;
+      margin: 4px 0;
+    }
+    .rate {
+      color: $color-2;
+      background-color: $color-3;
+      @include border-radius(3px);
+      text-align: right;
+      font-size: 10px;
+      vertical-align: middle;
+      padding: 2px 15px 2px 0;
+    }
+
+    .p-80 {
+      width: 80%;
+    }
+
+    .p-75 {
+      width: 75%;
+    }
+
+    .p-70 {
+      width: 70%;
+    }
+
+    .p-60 {
+      width: 60%;
+    }
+
+    .p-50 {
+      width: 50%;
+    }
+
+
+  }
+}
+
+
+
+
+
+.br-theme-fontawesome-stars {
+
+  .br-widget {
+    height: 28px;
+  
+    a {
+      font: normal normal normal 18px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      text-decoration: none;
+      margin-right: 2px;
+    }
+
+    a:after {
+      content: '\f005';
+      color: #ddd;
+    }
+
+    a.br-active:after {
+      color: #ffdf88;
+    }
+
+    a.br-selected:after {
+      color: #ffdf88;
+    }
+
+    .br-current-rating {
+      display: none;
+    }
+  }
+
+}

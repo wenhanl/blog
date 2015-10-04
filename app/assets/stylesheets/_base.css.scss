@@ -1,4 +1,6 @@
 $primary-color: #D19E29;
+$color-2: #a74752;
+$color-3: #c3d7d8;
 
 html,
 body {
@@ -33,12 +35,13 @@ a {
 	clear: both;
 }
 
-
+.block {
+  display: block;
+}
 
 .container {
 	margin: 0 auto;
 	width: 80%;
-	//height: 700px;
 }
 
 h1 {
@@ -49,24 +52,6 @@ p {
 	color: #555;
 	margin: 10px 0;
 }
-
-/* gradiant border */
-// .top-to-bottom {
-//     border-width: 2px;
-//     border-style: solid;
-//     // -webkit-border-image: 
-//     //   -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
-//     // -webkit-border-image: 
-//     //   -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
-//     // -moz-border-image:
-//     //   -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;    
-//     // -o-border-image:
-//     //   -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
-//     background-color: rgba(255,255,255,0);
-//     background-image:
-//       // linear-gradient(to bottom, #aaa, rgba(0, 0, 0, 0)) 10 50%;
-//       linear-gradient(to top, #fff 75%, rgba(255, 255, 255, 0) 100%);
-// }
 
 
 /* Fonts */
@@ -153,6 +138,16 @@ p {
 	src: font-url('oswald/Oswald-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+}
+
+@font-face {
+  font-family: "playball";
+  src: url('Playball/Playball-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url('VT323/VT323-Regular.ttf') format('truetype');
 }
 
 /* Mixin */
