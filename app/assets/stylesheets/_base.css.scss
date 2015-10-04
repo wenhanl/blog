@@ -142,12 +142,12 @@ p {
 
 @font-face {
   font-family: "playball";
-  src: url('Playball/Playball-Regular.ttf') format('truetype');
+  src: font-url('Playball/Playball-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "VT323";
-  src: url('VT323/VT323-Regular.ttf') format('truetype');
+  src: font-url('VT323/VT323-Regular.ttf') format('truetype');
 }
 
 /* Mixin */
