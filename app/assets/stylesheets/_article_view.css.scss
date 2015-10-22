@@ -38,14 +38,15 @@
 }
 
 .article-view-right {
-	// width: 23%;
-	// position: fixed;
-	// left: 68%;
-	// top: 70px;
+	width: 26%;
 }
 
 .article-view-left {
-	width: 68%;
+	width: 64%;
+
+	a {
+		color: #3366FF;
+	}
 
 	img {
 		max-width: 90%;
